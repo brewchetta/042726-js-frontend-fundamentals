@@ -49,10 +49,10 @@ if (5 > 6) {
 // document object model
 
 // get an individual item
-const heading = document.querySelector("h1")
+const title = document.querySelector("h1")
 
 // set attributes of an individual item
-heading.textContent = "Why Hello There"
+title.textContent = "Why Hello There"
 
 // get all items
 const allPTags = document.querySelectorAll("p")
@@ -73,28 +73,33 @@ const welcomeMessage = document.createElement("h2")
 
 // 2. change whatever is important about the element
 welcomeMessage.textContent = "Welcome to Lake Tahoe"
+welcomeMessage.id = "lake-tahoe-greeting"
+welcomeMessage.style.color = "red"
 
 // 3. give it a place to live (append or prepend)
 const body = document.body
+
+// body is where it lives
+// welcomeMessage is the thing that lives there
 body.append(welcomeMessage)
 
 // REMOVING ELEMENTS
 
-// welcomeMessage.remove()
+welcomeMessage.remove()
 
 // EXERCISE
 
-// // 1. Select the ul --> to be used later
-// const tahoeList = document.querySelector("ul")
+// // 1. Create a li --> it doesn't have a space to live & it doesn't have text yet
+const newLi = document.createElement("li")
 
-// // 2. Create a li
-// const newLi = document.createElement("li")
+// // 2. Change the li textContent so it reads a fun fact
+newLi.textContent = "Lake Tahoe has trees"
 
-// // 3. Change the li textContent so it reads a fun fact
-// newLi.textContent = "Lake Tahoe has trees"
+// // 3. Select the ul --> to be used later
+const tahoeList = document.querySelector("ul")
 
 // // 4. Put the li somewhere so that it displays
-// tahoeList.append(newLi)
+tahoeList.append(newLi)
 
 
 // FUNCTIONS
@@ -104,18 +109,71 @@ body.append(welcomeMessage)
 // newFact is an argument that will be given when we call the fn
 function addNewLakeTahoeFact( newFact ) {
     // your instructions for the fn go here
-    const tahoeList = document.querySelector("ul")
     const newLi = document.createElement("li")
     newLi.textContent = newFact
+    const tahoeList = document.querySelector("ul")
     tahoeList.append(newLi)
 }
 
 // invoke the fn (basically we make it happen)
 addNewLakeTahoeFact("Sasquatch lives in lake tahoe")
+addNewLakeTahoeFact("Lake Tahoe has trees")
+addNewLakeTahoeFact("Lake Tahoe has winter sports")
+addNewLakeTahoeFact("People live around Lake Tahoe")
 
 // define a fn
 function addOne( num ) {
     console.log(num + 1)
 }
 
+// run a fn
 addOne(6)
+
+function printFullName(firstName, lastName) {
+    const fullName = `${firstName} ${lastName}`
+    console.log(fullName)
+}
+
+printFullName("Chett", "Tiller") // "Chett Tiller"
+printFullName("Jim", "Bob") // "Jim Bob"
+
+function isItLargerThanFive(num) {
+    if (num > 5) {
+        console.log("Yep it's larger than 5")
+    } else {
+        console.log("No it's not larger than 5...")
+    }
+}
+
+isItLargerThanFive(4)
+isItLargerThanFive(9)
+
+// CHANGE TITLE COLOR
+
+// function makeTitleMagenta() {
+//     const title = document.querySelector("h1")
+//     title.style.color = "magenta"
+// }
+
+// function makeTitleMauve() {
+//     title.style.color = "#E0B0FF"
+// }
+
+// more flexible function that can take in a color arg
+function changeTitleColor(colorArgument) {
+    const title = document.querySelector("h1")
+    title.style.color = colorArgument
+}
+
+// COOKIE CLICKER
+
+let cookiesClicked = 1000000000
+
+function handleClickCookie() {
+    cookiesClicked = cookiesClicked + 1
+    const cookieCounter = document.querySelector("#cookie-counter")
+    cookieCounter.textContent = `You have clicked the cookie ${cookiesClicked} times`
+}
+
+const cookieButton = document.querySelector("#cookie-button")
+cookieButton.addEventListener("click", handleClickCookie)
