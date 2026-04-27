@@ -207,3 +207,51 @@ function getRandomMovie() {
     const randomFavMovie = listOfFavoriteMovies[index]
     alert(randomFavMovie)
 }
+
+// FOR LOOPS
+for (let i = 0; i < listOfFavoriteMovies.length; i++) {
+    // get movie from the array based on i
+    const movieName = listOfFavoriteMovies[i]
+    // make an li
+    const li = document.createElement("li")
+    // give li textContent
+    li.textContent = movieName
+    // put the li in the movie-list
+    const movieList = document.querySelector("#movie-list")
+    movieList.append(li)
+}
+
+//     "Saving Private Ryan",  // 0
+//     "Terminator 2",         // 1
+//     "Aladdin",              // 2
+//     "Gremlins",             // 3
+//     "Back to the Future",   // 4
+//     "Meet the Robinsons",   // 5
+//     "Interstellar"          // 6
+
+
+// OBJECTS //
+
+// data structure -- data type that contains data
+
+const person = {
+    firstName: "Chett",
+    lastName: "Tiller",
+    favoritePizza: "Hawaiian",
+    favoriteShirt: "Hawaiian",
+    numberOfCats: 2,
+    isLegalDrinkingAge: true,
+    favoriteMovies: ["Back to the Future", "Alien"]
+}
+// key: value
+
+person.favoritePizza // "Hawaiian"
+person.favoriteMovies // [ "Back to the Future", "Alien" ]
+
+person.age = 21 // set a value
+person.age = 22
+
+const listOfMovies = [
+    {title: "Alien", year: 1979, cast:[]},
+    // ... more of these go here
+]
