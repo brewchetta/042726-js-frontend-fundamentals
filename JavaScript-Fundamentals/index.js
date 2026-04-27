@@ -177,3 +177,33 @@ function handleClickCookie() {
 
 const cookieButton = document.querySelector("#cookie-button")
 cookieButton.addEventListener("click", handleClickCookie)
+
+
+// ARRAYS //
+
+// data structures --> a piece of data which contains other data
+
+const listOfFavoriteMovies = [
+    "Saving Private Ryan",  // 0
+    "Terminator 2",         // 1
+    "Aladdin",              // 2
+    "Gremlins",             // 3
+    "Back to the Future",   // 4
+    "Meet the Robinsons",   // 5
+    "Interstellar"          // 6
+]
+
+// REMINDER: JS starts counting at 0
+listOfFavoriteMovies[0] // "Saving Private Ryan"
+listOfFavoriteMovies[0] = "How to Train Your Dragon" 
+
+listOfFavoriteMovies.push("Alien")
+listOfFavoriteMovies.pop()
+
+// Random Number Generator
+function getRandomMovie() {
+    const randDecimalNumber = Math.random() * listOfFavoriteMovies.length
+    const index = Math.floor(randDecimalNumber)
+    const randomFavMovie = listOfFavoriteMovies[index]
+    alert(randomFavMovie)
+}
