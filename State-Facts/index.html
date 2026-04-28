@@ -9,12 +9,17 @@
 	<link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
+
+	<!-- javascript -->
+	<script defer src="js/state-data.js"></script>
+	<script defer src="js/index.js"></script>
+
 </head>
 <body>
 	<div class="outer-wrapper">
 		<header>
 			<h1>State Facts</h1>
-			<select id="state-list">
+			<select onchange="handleChangeState()" id="state-list">
 				<option value="usa">Choose a State</option>
 				<option value="al">Alabama</option>
 				<option value="ak">Alaska</option>
