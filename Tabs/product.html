@@ -8,6 +8,12 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Abel&family=Rancho&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
+
+	<!-- tabby -->
+	<link rel="stylesheet" href="js/tabby/css/tabby-ui.min.css">
+	<script src="js/tabby/js/tabby.min.js"></script>
+	<script defer src="js/index.js"></script>
+
 </head>
 <body class="about">
 	<div class="wrapper">
@@ -27,6 +33,12 @@
 		<main>
 			<h3>What Makes Hipstirred Coffee Special?</h3>
 			<p>At Hipstirred, our team of curators analyze your roast preferences and brewing tastes to hand-pick new beans you will love. Get your Chemex ready for the amazing coffee headed your way.</p>
+
+			<ul data-tabs>
+				<li><a data-tabby-default href="#overview">Overview</a></li>
+				<li><a href="#reviews">Reviews</a></li>
+				<li><a href="#questions">Q&A</a></li>
+			</ul>
 
 			<!-- Overview Content -->
 			<div id="overview" class="tabbed-content">
