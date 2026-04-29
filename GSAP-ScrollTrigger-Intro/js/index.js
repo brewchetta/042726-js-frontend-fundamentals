@@ -18,3 +18,33 @@ gsap.from('h2', {
         // 80% / 50% is where the scroll on page is
     }
 })
+
+// get all section images on the page
+const allSectionImgs = document.querySelectorAll('section img')
+
+// begin loop through all section images
+for (let index = 0; index < allSectionImgs.length; index++) {
+
+    // xMovement is whether we are coming in from the left or right in the animation
+    let xMovement = -100
+    // isEven calculates whether it's even or odd (true / false)
+    const isEven = index % 2 === 0
+
+    if (isEven) {
+        xMovement = -100
+    } else {
+        xMovement = 100
+    }
+
+    // apply gsap animation for each img on page
+    gsap.from(allSectionImgs[index], { // allSectionImgs[index] is the current img
+        scrollTrigger: {
+            trigger: allSectionImgs[index], // trigger is also the element
+        },
+        x: xMovement,
+        opacity: 0,
+        duration: 1.5
+    })
+
+}
+
