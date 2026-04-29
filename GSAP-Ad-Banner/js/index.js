@@ -21,13 +21,13 @@ timeline
     yPercent: 100 // h2 starts 100% of its height lower and then raises onto the screen
 })
 .set('#panel3', {
-    top: 0
+    top: 0 // immediately move the panel to the top
 }, '+=2')
 .from('#info', {
     duration: 0.5,
     yPercent: 100
 })
-.to('#panel2', {
+.to('#panel2', { // .to means instead of starting an animation from a state we move it to a state
     duration: 0.5,
     y: -65
 }, '<')
