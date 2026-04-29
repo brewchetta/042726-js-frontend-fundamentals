@@ -1,6 +1,6 @@
 const tl = gsap.timeline({
 	scrollTrigger: {
-		trigger: ".header",
+		trigger: "#hero",
 		start: "top top",
 		end: "bottom top",
 		scrub: true,
@@ -8,7 +8,7 @@ const tl = gsap.timeline({
 	}
 });
 
-gsap.utils.toArray(".header__background-layer").forEach(layer => {
+gsap.utils.toArray("#hero *").forEach(layer => {
 	const depth = layer.dataset.depth;
 	tl.to(layer, { 
 		y: () => -(layer.offsetHeight * depth), 
