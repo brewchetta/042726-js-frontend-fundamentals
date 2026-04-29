@@ -2,6 +2,7 @@
 const timeline = gsap.timeline()
 
 timeline
+.set('#banner', { visibility: 'visible' }) // make ad visible
 .from('#panel1-text', { // element to animate
     duration: 0.5,
     scale: 0.5, // how large it starts

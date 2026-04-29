@@ -1,7 +1,15 @@
 /* ANIMATION STYLING */
 
+#wrapper {
+	border: solid magenta 10px;
+	display: inline-block;
+}
+
 #banner {
 	overflow: hidden;
+	/* visibility means the ad still takes up space but it's otherwise invisible */
+	visibility: hidden; 
+	/* this can be better than display: none since it still takes up the space it'll need when it becomes visible */
 }
 
 /* OTHER STYLING */
